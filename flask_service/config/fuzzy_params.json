@@ -1,0 +1,71 @@
+{
+  "versi": "1.0",
+  "output_range": {
+    "min": 50000,
+    "max": 2000000,
+    "step": 1000
+  },
+  "variables": {
+    "tingkat_kerusakan": {
+      "range": [0, 100],
+      "sets": {
+        "ringan": {"type": "trapesium", "params": [0, 0, 20, 50]},
+        "sedang": {"type": "segitiga",  "params": [20, 50, 80]},
+        "berat":  {"type": "trapesium", "params": [50, 80, 100, 100]}
+      }
+    },
+    "usia_laptop": {
+      "range": [0, 10],
+      "sets": {
+        "muda":  {"type": "trapesium", "params": [0, 0, 2, 5]},
+        "sedang": {"type": "segitiga", "params": [2, 5, 8]},
+        "tua":   {"type": "trapesium", "params": [5, 8, 10, 10]}
+      }
+    },
+    "kesulitan_perbaikan": {
+      "range": [0, 10],
+      "sets": {
+        "mudah":  {"type": "trapesium", "params": [0, 0, 2, 5]},
+        "sedang": {"type": "segitiga",  "params": [2, 5, 8]},
+        "sulit":  {"type": "trapesium", "params": [5, 8, 10, 10]}
+      }
+    },
+    "estimasi_biaya": {
+      "range": [50000, 2000000],
+      "sets": {
+        "murah":  {"type": "trapesium", "params": [50000, 50000, 300000, 800000]},
+        "sedang": {"type": "segitiga",  "params": [300000, 1025000, 1750000]},
+        "mahal":  {"type": "trapesium", "params": [1250000, 1750000, 2000000, 2000000]}
+      }
+    }
+  },
+  "rules": [
+    {"no": 1,  "kerusakan": "ringan", "usia": "muda",  "kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 2,  "kerusakan": "ringan", "usia": "muda",  "kesulitan": "sedang", "biaya": "murah"},
+    {"no": 3,  "kerusakan": "ringan", "usia": "muda",  "kesulitan": "sulit",  "biaya": "murah"},
+    {"no": 4,  "kerusakan": "ringan", "usia": "sedang","kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 5,  "kerusakan": "ringan", "usia": "sedang","kesulitan": "sedang", "biaya": "murah"},
+    {"no": 6,  "kerusakan": "ringan", "usia": "sedang","kesulitan": "sulit",  "biaya": "sedang"},
+    {"no": 7,  "kerusakan": "ringan", "usia": "tua",   "kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 8,  "kerusakan": "ringan", "usia": "tua",   "kesulitan": "sedang", "biaya": "sedang"},
+    {"no": 9,  "kerusakan": "ringan", "usia": "tua",   "kesulitan": "sulit",  "biaya": "mahal"},
+    {"no": 10, "kerusakan": "sedang", "usia": "muda",  "kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 11, "kerusakan": "sedang", "usia": "muda",  "kesulitan": "sedang", "biaya": "murah"},
+    {"no": 12, "kerusakan": "sedang", "usia": "muda",  "kesulitan": "sulit",  "biaya": "sedang"},
+    {"no": 13, "kerusakan": "sedang", "usia": "sedang","kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 14, "kerusakan": "sedang", "usia": "sedang","kesulitan": "sedang", "biaya": "sedang"},
+    {"no": 15, "kerusakan": "sedang", "usia": "sedang","kesulitan": "sulit",  "biaya": "mahal"},
+    {"no": 16, "kerusakan": "sedang", "usia": "tua",   "kesulitan": "mudah",  "biaya": "sedang"},
+    {"no": 17, "kerusakan": "sedang", "usia": "tua",   "kesulitan": "sedang", "biaya": "mahal"},
+    {"no": 18, "kerusakan": "sedang", "usia": "tua",   "kesulitan": "sulit",  "biaya": "mahal"},
+    {"no": 19, "kerusakan": "berat",  "usia": "muda",  "kesulitan": "mudah",  "biaya": "murah"},
+    {"no": 20, "kerusakan": "berat",  "usia": "muda",  "kesulitan": "sedang", "biaya": "sedang"},
+    {"no": 21, "kerusakan": "berat",  "usia": "muda",  "kesulitan": "sulit",  "biaya": "mahal"},
+    {"no": 22, "kerusakan": "berat",  "usia": "sedang","kesulitan": "mudah",  "biaya": "sedang"},
+    {"no": 23, "kerusakan": "berat",  "usia": "sedang","kesulitan": "sedang", "biaya": "mahal"},
+    {"no": 24, "kerusakan": "berat",  "usia": "sedang","kesulitan": "sulit",  "biaya": "mahal"},
+    {"no": 25, "kerusakan": "berat",  "usia": "tua",   "kesulitan": "mudah",  "biaya": "mahal"},
+    {"no": 26, "kerusakan": "berat",  "usia": "tua",   "kesulitan": "sedang", "biaya": "mahal"},
+    {"no": 27, "kerusakan": "berat",  "usia": "tua",   "kesulitan": "sulit",  "biaya": "mahal"}
+  ]
+}
